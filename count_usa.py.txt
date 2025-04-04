@@ -6,4 +6,21 @@ temp_str = str1.lower()
 
 # use count function
 count = temp_str.count(sub_string.lower())
-print("The USA count is:", count)
+
+result = f"The USA count is: {count}"
+
+# Print result to the console (optional)
+print(result)
+
+# Write the result to a file
+file_path = "/home/dir3/rezultat.txt"
+
+# Ensure the directory exists (in case you're running the script in a pipeline)
+import os
+os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+# Open the file and write the result
+with open(file_path, "w") as file:
+    file.write(result)
+
+print(f"Result written to {file_path}")
